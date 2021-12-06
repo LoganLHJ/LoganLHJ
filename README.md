@@ -1,5 +1,4 @@
-1.
-# japonicus vcf file에서 '\t' 기준으로 읽어, genomic position 정보와 missense variant region 정보를 불러옴.
+1.japonicus vcf file에서 '\t' 기준으로 읽어, genomic position 정보와 missense variant region 정보를 불러옴.
 import pandas as pd
 
 japonicus_vcf_file = '/BiO/Research/Project2/Japonicus/Analysis/Z.japonicus.filtered_DP5SNV_modified.annot.vcf'
@@ -14,8 +13,7 @@ df_missense_variant = df_missense_variant.iloc[:,[0,1,7]]
 df_missense_variant.to_csv(output, index=False, sep='\t', header=None)
 
 
-2.
-# 01_japonicus_genomic_position_and_missense_variant_region.vcf에서 '|' 기준으로 읽어, genomic position 정보와 missense variant region 정보를 불러옴.
+2.01_japonicus_genomic_position_and_missense_variant_region.vcf에서 '|' 기준으로 읽어, genomic position 정보와 missense variant region 정보를 불러옴.
 import pandas as pd
 import numpy as np
 
@@ -33,10 +31,8 @@ df_missense_variant = df_missense_variant.iloc[:,[0,1,10]]
 df_missense_variant.to_csv(output, index=False, sep='\t', header=None)
 
 
-3.
-# 02_japonicus_genomic_position_and_missense_variant_region.py에서 '\t' 기준으로 읽어, 
-# 1.genomic position 정보와 missense variant region 정보를 불러옴.
-# 2.amino acids 3 letters to 1 letter 으로 변경
+3-1.02_japonicus_genomic_position_and_missense_variant_region.py에서 '\t' 기준으로 읽어, genomic position 정보와 missense variant region 정보를 불러옴.
+3-2.amino acids 3 letters to 1 letter 으로 변경
 
 import pandas as pd
 
@@ -54,8 +50,7 @@ df_missense_variant[4] = df_missense_variant[4].str.replace('Val','V').str.repla
 df_missense_variant.to_csv(extract_chromosome_position_and_missense_variant, index=False, sep='\t', header=None)
 
 
-4.
-#큰따옴표("") 제거
+4.큰따옴표("") 제거
 import pandas as pd
 
 japonicus_vcf_file = '/BiO/Research/Project2/Japonicus/Analysis/03_japonicus_genomic_position_and_missense_variant_region.vcf'

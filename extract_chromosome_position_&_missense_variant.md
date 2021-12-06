@@ -13,6 +13,7 @@ df_missense_variant = df_missense_variant.iloc[:,[0,1,7]]
 df_missense_variant.to_csv(output, index=False, sep='\t', header=None)
 
 
+
 2.01_japonicus_genomic_position_and_missense_variant_region.vcf에서 '|' 기준으로 읽어, genomic position 정보와 missense variant region 정보를 불러옴.
 import pandas as pd
 import numpy as np
@@ -29,6 +30,7 @@ df_missense_variant = df_missense_variant[df_missense_variant[1]=='missense_vari
 df_missense_variant = df_missense_variant.iloc[:,[0,1,10]]
 
 df_missense_variant.to_csv(output, index=False, sep='\t', header=None)
+
 
 
 3-1.02_japonicus_genomic_position_and_missense_variant_region.py에서 '\t' 기준으로 읽어, genomic position 정보와 missense variant region 정보를 불러옴.
@@ -48,6 +50,7 @@ df_missense_variant = df_missense_variant.iloc[:,[0,1,3,4]]
 df_missense_variant[4] = df_missense_variant[4].str.replace('Val','V').str.replace('Ala','A').str.replace('Asp','D').str.replace('Glu','E').str.replace('Gly','G').str.replace('Phe','F').str.replace('Leu','L').str.replace('Ser','S').str.replace('Tyr','Y').str.replace('Cys','C').str.replace('Trp','W').str.replace('Pro','P').str.replace('His','H').str.replace('Gln','Q').str.replace('Arg','R').str.replace('Ile','I').str.replace('Met','M').str.replace('Thr','T').str.replace('Asn','N').str.replace('Lys','K').str.replace('p.','')
 
 df_missense_variant.to_csv(extract_chromosome_position_and_missense_variant, index=False, sep='\t', header=None)
+
 
 
 4.큰따옴표("") 제거
